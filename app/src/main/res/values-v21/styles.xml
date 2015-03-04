@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- extend one of the Theme.AppCompat themes -->
+    <style name="CustomActionBarTheme" parent="android:Theme.Material">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- customize the color palette -->
+        <item name="colorPrimary">@color/primary_branding</item>
+        <item name="colorPrimaryDark">@color/primary_branding</item>
+        <item name="colorAccent">@color/primary_branding</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/primary_branding</item>
+    </style>
+
+    <style name="FABButton" parent="BaseImageButton">
+        <item name="android:background">@drawable/ripple</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+</resources>

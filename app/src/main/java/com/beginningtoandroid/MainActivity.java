@@ -1,12 +1,20 @@
 package com.beginningtoandroid;
 
+import android.app.Activity;
+import android.graphics.Outline;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +22,34 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        ImageButton mRefreshButton = (ImageButton) findViewById(R.id.refreshButton);
+
+        // Check if we're running on Android 5.0 or higher
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Call some material design APIs here
+            ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() {
+                @Override
+                public void getOutline(View view, Outline outline) {
+                    // Or read size directly from the view's width/height
+                    outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                }
+            };
+            mRefreshButton.setOutlineProvider(viewOutlineProvider);
+            mRefreshButton.setClipToOutline(true);
+        } else {
+            // Implement features without material design
+        }
+        mRefreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, getString(R.string.toastMessage), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="toastMessage">Hey this is a toast!</string>
 </resources>
