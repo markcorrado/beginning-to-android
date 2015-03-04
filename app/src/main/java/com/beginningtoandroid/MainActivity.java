@@ -1,6 +1,7 @@
 package com.beginningtoandroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Outline;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
@@ -46,7 +47,9 @@ public class MainActivity extends Activity {
         mRefreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, getString(R.string.toastMessage), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, getString(R.string.toastMessage), Toast.LENGTH_SHORT).show();
+                Intent activityIntent = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(activityIntent);
             }
         });
     }
