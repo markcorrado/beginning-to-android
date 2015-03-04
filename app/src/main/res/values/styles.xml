@@ -22,7 +22,7 @@
     <style name="BaseImageButton">
         <item name="android:layout_width">@dimen/fab_size</item>
         <item name="android:layout_height">@dimen/fab_size</item>
-        <item name="android:src">@drawable/ic_action_refresh</item>
+        <item name="android:src">@android:drawable/ic_input_add</item>
         <item name="android:background">@drawable/fabripoff</item>
         <item name="android:scaleType">fitCenter</item>
         <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
